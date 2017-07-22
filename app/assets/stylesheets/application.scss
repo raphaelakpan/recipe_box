@@ -1,2 +1,62 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.navbar-form {
+  width: 50%;
+  float: right;
+}
+
+@mixin box-shadow {
+  box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+  -moz-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
+}
+
+$red: #f05;
+
+body {
+  background-color: rgb(235, 238, 243);
+}
+
+.main_content {
+
+}
+
+.recipe {
+  background-color: #fff;
+  border-radius: 5px;
+  @include box-shadow;
+  border: none;
+  .image_wrapper {
+    max-width: 100%;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+  }
+  img {
+    width: 100%;
+    transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -webkit-transition: all .3s ease-out;
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  h2 {
+    padding: 15px 5%;
+    a {
+      color: $red;
+      &:hover {
+        color: blueviolet;
+      }
+    }
+  }
+}
+
+#recipe_info, #ingredients, #directions {
+  background: #fff;
+  @include box-shadow;
+  min-height: 360px;
+  border-radius: 5px;
+  padding: 2em 8%;
+}

@@ -1,0 +1,17 @@
+%nav.navbar.navbar-default
+  .container
+    .navbar-header
+      %a.navbar-brand
+        %img{alt: 'Brand', src: 'http://www.freeiconspng.com/uploads/chief-icon-8.png', width: '25'}
+      = link_to 'Recipes App', root_path, class: 'navbar-brand'
+
+    .navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li{class: "#{active('/')}"}= link_to "Home", root_path
+        %li{class: "#{active('/recipes/new')}"}= link_to "New Recipe", new_recipe_path
+
+      %form.navbar-form
+        .form-group
+          %input.form-control{type:'text', placeholder:"Search" }
+          %button.btn.btn-default{ type:'submit' } Search
+
