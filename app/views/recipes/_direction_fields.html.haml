@@ -1,0 +1,5 @@
+.form-inline.row
+  .nested-fields
+    .form-group
+      = f.input :step, input_html: { class: 'form-control' }
+    = link_to_remove_association "Remove", f, class: 'btn btn-info'
