@@ -6,6 +6,10 @@
       #recipe_info
         %h1= @recipe.title
         %p= @recipe.description
+        - if @recipe.user.present?
+          %p
+            Submitted by
+            = @recipe.user[:email]
 
   .row
     .col-md-6
@@ -24,10 +28,11 @@
 
   .row
     .col-md-12
-      = link_to('Edit', edit_recipe_path, class:'btn btn-primary' )
-      = link_to 'Delete', @recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
+      - if user_signed_in?
+        = link_to('Edit', edit_recipe_path, class:'btn btn-primary' )
+        = link_to 'Delete', @recipe, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger'
+        %br
+        %br
 
-      %br
-      %br
       = link_to('Back', recipes_path, class:'btn btn-default' )
 

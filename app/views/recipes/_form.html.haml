@@ -1,5 +1,5 @@
 = simple_form_for @recipe, html: { multipart: true } do |f|
-  - if @recipe.errors.any?
+  - if @recipe.errors.present?
     #errors
       %p
         = @recipes.errors.count

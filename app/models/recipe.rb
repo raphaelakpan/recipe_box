@@ -9,4 +9,6 @@ class Recipe < ApplicationRecord
   accepts_nested_attributes_for :directions, reject_if: :all_blank, allow_destroy: true
 
   validates :title, :description, presence: true
+
+  belongs_to :user
 end

@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
   before_action :set_recipe, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
     @recipes = Recipe.all.order('created_at DESC')
@@ -9,11 +10,11 @@ class RecipesController < ApplicationController
   end
 
   def new
-    @recipe = Recipe.new
+    @recipe = current_user.recipes.build
   end
 
   def create
-    @recipe = Recipe.new(recipes_params)
+    @recipe = current_user.recipes.build(recipes_params)
     if @recipe.save!
       redirect_to @recipe, notice: 'Successfully created new recipe'
     else

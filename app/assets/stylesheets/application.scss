@@ -1,11 +1,6 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.navbar-form {
-  width: 50%;
-  float: right;
-}
-
 @mixin box-shadow {
   box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;
   -webkit-box-shadow: rgba(0, 0, 0, 0.09) 0 2px 0;

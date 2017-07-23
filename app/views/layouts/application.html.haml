@@ -9,7 +9,10 @@
   %body
     = render 'layouts/navbar'
     .container
-      - flash.each do |name, message|
-        = content_tag :div, message, class: 'alert'
+      - if notice
+        %p.alert.alert-success= notice
+      - if alert
+        %p.alert.alert-danger= alert
+
       = yield
 
